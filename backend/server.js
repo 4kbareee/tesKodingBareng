@@ -1,7 +1,7 @@
-
+const conn = require('./connection/db.js');
 const express = require('express');
 const cors = require('cors');
-const mysql = require('mysql');
+
 
 const app = express();
 const port = 3000;
@@ -9,19 +9,6 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-const conn = mysql.createConnection({
-    user: 'root',
-    password: '',
-    database: 'belajar_api',
-});
-
-conn.connect((err) => {
-    if (err) {
-        console.error('Database connection failed:', err);
-        return;
-    }
-    console.log('Connected to the database');
-});
 
 
 
